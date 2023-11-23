@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+}
+
+.sword_abc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 350px;
+    background-image: url(./stars.jpg);
+}
+
+.sword_a, .sword_b, .sword_c {
+    width: 350px;
+    height: 30px;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+.sword_a {
+    background-color: grey;
+   
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+.sword_b {
+    background-color: gray;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+  
+}
+.sword_c {
+    background-color: grey;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+
+.sword_abc:hover .sword_a {
+    box-shadow: 0 0 20px rgb(0, 255, 0);
+    animation: OutAndDown 1.1s forwards;
+}
+
+.sword_abc:hover .sword_b {
+    transform: translateY(20px) rotate(50deg);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.829);
+    background-color: blue;
+    transition: transform 0.5s ease-in-out
+}
+
+.sword_abc:hover .sword_c {
+    box-shadow: 0 0 20px rgb(255, 0, 0);
+    background-color: red;
+    transform: translateY(-75px) rotate(-50deg);
+    transition: transform 0.5s ease-in-out
+}
+
+.handle_a, .handle_b, .handle_c {
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.handle_a {
+    margin-left: 20px;
+}
+.handle_c {
+    margin-left: 20px;
+}
+.handle_b {
+    margin-right: 20px;
+}
+
+
+@keyframes OutAndDown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+
+
+/* Balls */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80%;
+    height: 350px;
+    margin: 20px auto;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    
+}
+.circle:nth-child(1) {
+    background: blue;
+    animation: ballOne 0.7s cubic-bezier(0.5, 0.05, 0.5, 0.95) 0.7s infinite alternate none;
+}
+.circle:nth-child(2) {
+    background: linear-gradient(to right, blue, lightgreen);
+}
+.circle:nth-child(3) {
+    background: rgb(158, 222, 158);
+}
+.circle:nth-child(4) {
+    background: rgb(146, 206, 146);
+}
+.circle:nth-child(5) {
+    background: rgb(122, 173, 122);
+}
+.circle:nth-child(6) {
+    background: rgb(107, 152, 107);
+}
+.circle:nth-child(7) {
+    background: rgb(78, 118, 78);
+    animation: ballSeven 0.7s cubic-bezier(0.5, 0.05, 0.5, 0.95) 0s infinite alternate none;
+   
+}
+
+
+@keyframes ballOne {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-120px, -100px);
+        
+        box-shadow: 0 100px 30px rgba(0, 0, 0, 0.085);
+    }
+}
+
+@keyframes ballSeven {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(120px, -100px);
+        box-shadow: 0 100px 30px rgba(0, 0, 0, 0.085);
+    }
+}
+
